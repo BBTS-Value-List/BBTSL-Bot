@@ -1,0 +1,37 @@
+{
+  "name": "bbtsl-bot",
+  "version": "0.1.0",
+  "private": false,
+  "description": "Discord bot for the BBTSL Blade Ball value list.",
+  "license": "SEE LICENSE IN LICENSE",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/PVEstrap/BBTSL-Bot.git"
+  },
+  "bugs": {
+    "url": "https://github.com/PVEstrap/BBTSL-Bot/issues"
+  },
+  "homepage": "https://github.com/PVEstrap/BBTSL-Bot#readme",
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node --env-file=.env src/index.js",
+    "railway:check": "node scripts/railway-doctor.mjs",
+    "railway:start": "npm run railway:check && npm run commands:register:auto && npm start",
+    "commands:register:auto": "node scripts/register-commands.mjs auto",
+    "commands:register:all": "node scripts/register-commands.mjs all",
+    "commands:register:guild": "node scripts/register-commands.mjs guild",
+    "commands:register:global": "node scripts/register-commands.mjs global",
+    "check": "node scripts/check.mjs",
+    "test": "node --test tests/*.test.mjs"
+  },
+  "dependencies": {
+    "discord.js": "^14.26.4",
+    "dotenv": "^16.6.1",
+    "pino": "^9.7.0"
+  },
+  "devDependencies": {}
+}
